@@ -40,7 +40,7 @@ window.addEventListener("load", function() {
     });
     function resetPagePosition() {
         postTops = [];
-        const pagePostion = window.pageYOffset + 250;
+        const pagePostion = window.pageYOffset + 160;
         posts.forEach(function(post){
             postTops.push(Math.floor(post.getBoundingClientRect().top + window.pageYOffset));
         });
