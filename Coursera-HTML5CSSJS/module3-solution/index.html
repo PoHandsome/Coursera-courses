@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Assignment Solution for Module 3</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+  </head>
+<body>
+  <header>
+    <nav id="header-nav" class="navbar navbar-default">
+      <div class="container pull-left">
+        <div class="navbar-header">
+          <div class="navbar-brand">
+            <a href="index.html">
+              <h1>Food, LLC</h1>
+            </a>
+          </div>
+        </div>  
+      </div> <!--.container -->
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div id="collapsable-nav" class="collapse navbar-collapse">
+        <ul id="nav-list" class="nav navbar-nav">
+          <li class="active">
+            <a href="#Chicken" class="text-center">Chicken</a>
+          </li>
+          <li class="active">
+            <a href="#Beef" class="text-center">Beef</a>
+          </li>
+          <li class="active">
+            <a href="#Sushi" class="text-center">Sushi</a>
+          </li>
+        </ul>
+      </div>
+    </nav> <!--#haeder-nav -->
+  </header>
+
+  <div id="main-content" class="container">
+    <div>
+      <h2 class="text-center">Our Menu</h2>
+    </div>
+
+    <div id="food-content">
+      <h3 id="Chicken" class="text-center">Chicken</h3>
+      <article>
+        [MUSIC] Okay, so let's continue building our site, and right now, we're going to concentrate on these buttons right here, these menu items. So let me go back to the code editor, and I'm right now located in lecture 32 after folder I'm looking at the index.html and I'm going to go ahead and scroll down to right below where our navbar header, this one right here so, let's let sublime text help me out here. And show me where that ends. Right here is where it ends. I actually can remove this line and just put it right here. So I need to put it right below where the navbar header ends, because that's now not part of the navbar header that's going to show up when the main menu collapses and kind of disappears, and only is accessible through this toggle button. Okay, so I'm going to go ahead and paste some code that I pre-baked. And let's go over the code. Okay, so the first thing you see is this is the div that contains all of our menus, all of our navigation buttons. And you see the ID that I gave this div is collapsible na, nav. Well, you've seen this before. There it is, collapsible nav. And the way we specify or do a selector API type of ID is we put a pound sign in front of it. So very much the same as CSS. So here, we're saying I want to select pound sign collapsible nav which means ID, that's collapsible nav, well the ID collapsible nav is right here and the collapse.js, the plug-in from Bootstrap, will use this information right here to know where to target it's collapsing kind of behavior functionality and it will know to target it right here. There's a couple of required classes that I need to put in here. One is collapse another one is navbar-collapse. And again if you look at the bootstrap documentation this is what they tell you to put on the collapsible menu. Okay so that's how our container div, it's going to contain all of our menu items. Next the way we're going to display the menu items, which is a very common practice to do, is to create an un-ordered list. And we're going to give this un-ordered list an ID called nav-list, and we're going to target that later for styling. And we're going to give it a few classes. One is nav, navbar-nav, and navbar-right. Well nav and navbar-nav is basically saying that I am going to be a component of our navigation bar or navigation. And these are the classes that basically turn our un-ordered list into this nicely done menu. Right there in the navigation bar. And the class here is navbar-right. Well that class is very similar to those classes pull-right, pull-left, except this one is specifically for the navbar. So this is navbar-right means I want to still have a navigation bar, but I want it to be pulled to right. I want it to float all the way to the right. So if I actually look at our design these navigation menus they're not sitting next to the name of the restaurant. They're sitting all the way to the right. And actually they're aligned to the right. And the way that's done is through this navbar-right class. Okay, so the next task is to start listing these LI items. And each Li item is going to have an A element. A, H, or F element that is going point to some page. Usually within the website. And not only is it going to point to it, it's going to say things like menu, so that's going to be the actual name of the button. But right next to it is going to have the spin with a special couple of classes. Glyphicon, glyphicon-cutlery. And what these classes do is they're able to bring in what's called an icon font. An icon font is basically a vector based image that is able to behave in the same way that that the font would behave. In other words you could size it, you could colorize it, give it a color, basically use it the same way you use a font except it's usually some sort of vector based shape. Well in this case glyphicon or glyphicon and glyphicon-cutlery will give us kind of a fork and a knife and that will be our menu. Also notice, we're putting a break between the actual icon and the word menu. But we're not just putting a break, we're putting a class on it and we're saying hidden XS which means I want this break to go away when the screen size is extra small. And the reason that is is if you can take a look, right now the cutleries on top and the menus right in the bottom, well the way it's achieved is through that break element. When we actually do the expanding of the menu when you use the toggle button, I don't want the icon to be on top and make this button super thick. Instead, I want them to laid out the icon and the menu or the words for the menu, I want them to be flat. I want them to be horizontal. So therefore I'm going to go ahead and hide the break element at that screen size. And basically the same code is done for about in the words. And this is again a glyphicon. Now where do you get these glyphicons? Well actually a whole bunch of them already come by default with Bootstrap. And if you look at the Bootstrap documentation you can actually look at these glyph icons right here. If you go to components and glyphicons. And you can have a whole bunch of different glyphicons and it will tell you exactly how to specify it. So in this case, for example, it's glyphicon space glyphicon star. And that's the glyph icon that you're going to get and you're able to, again, style it however you want in terms of color, in terms of sizing and so just like a regular font, even if you make it super big, the shape of it is still going to be very sharp and clear. The one last item here that I want you to take a look at is this last LI, which contains our phone number. And there are a couple of things here. Number one is I'm telling you tel with a colon and the phone number and what's that going to do is if actually somebody clicks on it or taps on it they will trigger the phone to try to call it, so let's say you have calling program installed on your computer in the regular desktop, they'll trigger that. Or if you're on a mobile phone, this type of set-up will trigger the phone to try to call or use its phone feature to call. Now notice what we're doing here. We're setting up this LI to be hidden XS meaning when the screen size is going to be super small I want this phone number hidden. Phone number together with the words we deliver. Just the whole thing. I want the whole thing hidden. So why would we want to hide this element when the screen is extra small? Well, let me show you. When the size of my browser is mobile. Meaning, I'm in a mobile phone, I don't want the phone number to show up as part of this menu. I actually wanted to show up right across the entire width of the browser, the mobile browser. And I want to have actually pretty drastically different styling for it, and that is why I want to hide this element all together when we're at the screen size of extra small. Okay time to save the page and make sure that we have our browser sync started. Let's start our browser sync.
+      </article>
+    </div>
+    <div id="food-content">
+      <h3 id="Beef" class="text-center">Beef</h3>
+      <article>
+        [MUSIC] Okay, so let's continue building our site, and right now, we're going to concentrate on these buttons right here, these menu items. So let me go back to the code editor, and I'm right now located in lecture 32 after folder I'm looking at the index.html and I'm going to go ahead and scroll down to right below where our navbar header, this one right here so, let's let sublime text help me out here. And show me where that ends. Right here is where it ends. I actually can remove this line and just put it right here. So I need to put it right below where the navbar header ends, because that's now not part of the navbar header that's going to show up when the main menu collapses and kind of disappears, and only is accessible through this toggle button. Okay, so I'm going to go ahead and paste some code that I pre-baked. And let's go over the code. Okay, so the first thing you see is this is the div that contains all of our menus, all of our navigation buttons. And you see the ID that I gave this div is collapsible na, nav. Well, you've seen this before. There it is, collapsible nav. And the way we specify or do a selector API type of ID is we put a pound sign in front of it. So very much the same as CSS. So here, we're saying I want to select pound sign collapsible nav which means ID, that's collapsible nav, well the ID collapsible nav is right here and the collapse.js, the 
+      </article>
+    </div>
+    <div id="food-content">
+      <h3 id="Sushi" class="text-center">Sushi</h3>
+      <article>
+        [MUSIC] Okay, so let's continue building our site, and right now, we're going to concentrate on these buttons right here, these menu items. So let me go back to the code editor, and I'm right now located in lecture 32 after folder I'm looking at the index.html and I'm going to go ahead and scroll down to right below where our navbar header, this one right here so, let's let sublime text help me out here. And show me where that ends. Right here is where it ends. I actually can remove this line and just put it right here. So I need to put it right below where the navbar header ends, because that's now not part of the navbar header that's going to show up when the main menu collapses and kind of disappears, and only is accessible through this toggle button. Okay, so I'm going to go ahead and paste some code that I pre-baked. And let's go over the code. Okay, so the first thing you see is this is the div that contains all of our menus, all of our navigation buttons. And you see the ID that I gave this div is collapsible na, nav. Well, you've seen this before. There it is, collapsible nav. And the way we specify or do a selector API type of ID is we put a pound sign in front of it. So very much the same as CSS. So here, we're saying I want to select pound sign collapsible nav which means ID, that's collapsible nav, well the ID collapsible nav is right here and the collapse.js, the 
+      </article>
+    </div>
+  </div><!-- End of #main-content -->
+
+  <!-- jQuery (Bootstrap JS plugins depend on it) -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

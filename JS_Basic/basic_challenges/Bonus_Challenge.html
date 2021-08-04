@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bonus Challenge</title>
+</head>
+<body>
+
+    <h1>JavaScript Basic Challenges</h1>
+    <h2>Bonus Challenge</h2>
+    <script type="text/javascript">
+
+        var color = prompt("Please enter a color!").toLowerCase();
+
+        if (["red", "blue", "yellow"].includes(color)) {
+            var level = "primary";
+        }
+        else if (["orange", "green", "purple"].includes(color)) {
+            var level = "secondary";
+        }
+        else {
+            var level = "";
+        };
+
+        console.log(`You picked a ${level} color: ${color}`)
+    </script>
+    
+</body>
+</html>

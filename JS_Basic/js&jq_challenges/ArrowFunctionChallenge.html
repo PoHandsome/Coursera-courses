@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const greeting = (fname, lname) => `Hello ${fname} ${lname}`;
+        // console.log(greeting("Jose", "Garcia"));
+        // const square = x => x*x;
+        // console.log(square(2));
+        // const largestNum = (num1, num2) => num1 > num2 ? num1 : num2;
+        // console.log(largestNum(45, 22));
+        // const animals = ["llama", "chicken", "dog", "cat"];
+        // animals.forEach( eachAnimal => {
+        //     const upperCase = eachAnimal.toUpperCase();
+        //     console.log(upperCase);
+        // })
+        const scores = [5, 10, 15, 20];
+        const totals = (accumulator, curValue) => accumulator + curValue;
+        console.log(scores.reduce(totals));
+    </script>
+</body>
+</html>

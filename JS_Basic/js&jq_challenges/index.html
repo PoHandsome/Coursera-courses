@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" id="link1">link one</a></li>
+            <li><a href="#" id="link2">link two</a></li>
+            <li><a href="#" id="link3">link three</a></li>
+            <li><a href="#" id="link4">link four</a></li>
+            <li><a href="#" id="link5">link five</a></li>
+        </ul>
+    </nav>
+    <p id="paralink1">Looks like you clicked the first link in the list</p>
+    <p id="paralink2">Looks like you clicked the second link in the list</p>
+    <p id="paralink3">Looks like you clicked the third link in the list</p>
+    <p id="paralink4">Looks like you clicked the fourth link in the list</p>
+    <p id="paralink5">Looks like you clicked the fifth link in the list</p>
+    <script>
+        const lias = document.querySelectorAll("nav ul li a")
+        const ps = document.querySelectorAll("p")
+        for (let i = 0; i < lias.length; i++) {
+            lias[i].addEventListener("click", function () {
+                paraNum = "#para" + this.id;
+                for (let i = 0; i < ps.length; i++) {
+                    ps[i].style.color = "black"; //loop through and make all paras black
+                };
+                document.querySelector(paraNum).style.color = "red";
+            })
+        }
+    </script>
+</body>
+</html>

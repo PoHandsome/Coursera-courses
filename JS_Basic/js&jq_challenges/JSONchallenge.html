@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSON challenge</title>
+</head>
+<body>
+    <form id="addpet">
+        <p><label>Name <input type="text" id="name"></label></p>
+        <p><label>Species <input type="text" id="species"></label></p>
+        <p><label>Greeting <input type="text" id="greeting"></label></p>
+        <p><input type="submit" id="addpet"></p>
+    </form>
+    <div></div>
+    <script type="text/javascript">
+        
+        function makingPet(name, species, greeting) {
+            this.name = name;
+            this.species = species;
+            this.greeting = function() {
+                alert(greeting);
+            };
+        }
+        const div = document.querySelector("div");
+        function addToDiv (pet) {
+            var newpet = `<p>I have a pet ${pet.species} named ${pet.name}</p>`
+            newpet += `<p><button id="sayhi"> Click for a greeting from ${pet.name}</button></p>`
+            div.innerHTML = newpet;
+            document.querySelector("#sayhi").addEventListener("click", pet.greeting);
+        }
+        const submit = document.querySelector("#addpet")
+        submit.addEventListener("submit", function(event) {
+            event.preventDefault();
+            let formData = event.target.elements;
+            let errors = 0;
+            if (formData[0].value == "" || formData[1].value == "" || formData[2].value == "") {errors++;};
+            if (errors != 0) {
+                alert("Fill in the Fields.")
+            }
+            else {
+                
+                var pet = new makingPet(formData[0].value, formData[1].value, formData[2].value);
+                addToDiv(pet);
+                // console.log(pet);
+                // pet.greeting();
+            }
+            
+            // let name = document.querySelector("#name").value;
+            // let species = document.querySelector("#species").value;
+            // var greeting = document.querySelector("#greeting").value;
+            // var pet = new makingPet(name, species, greeting);
+           
+        })
+
+
+        // var pet1 = new makingPet("ham", "cat", "meow");
+        // var pet2 = new makingPet("money", "dog", "woof");
+        // pet1.greeting();
+        // pet2.greeting();
+        // var pet = {"name": "magpie", "species": "bird"};
+
+        // pet.qualities = {"color": "grey", "disposition": "noisy", "size": "small"};
+        // pet.name = "fat";
+        // pet.species = "pigeon";
+        // pet.qualities.supplies = ["bird shop", "wild", "bird hospital", "others"];
+        // pet.greeting = function() {
+        //     alert("goo goo gooooooooo!");
+        // };
+        // pet.greeting();
+        // console.log(pet);
+        // console.log(`I need to get ${pet.qualities.supplies.length} supplies for ${pet.name} at the store`)
+        // console.log(`I have a pet ${pet.species} named ${pet.name}`)
+    </script>
+</body>
+</html>

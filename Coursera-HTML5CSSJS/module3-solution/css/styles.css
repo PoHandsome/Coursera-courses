@@ -1,0 +1,107 @@
+body {
+    font-size: 16px;
+    font-family: "Lora", serif;
+}
+
+/** HEADER **/
+#header-nav {
+    background-color: #555599;
+    border-radius: 0;
+    border: 3px black solid;
+}
+#header-nav .container {
+    height: 100px;
+}
+#header-nav .navbar-brand {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: black;
+    margin: 25px 0 0 15px;
+    font-weight: bold;
+    font-size: 3em;
+}
+
+#header-nav button {
+    margin: 35px 10px 0 0;
+    border: 1px solid black;
+}
+ #header-nav .icon-bar {
+    border: 1px solid black;
+ }
+#collapsable-nav {
+    clear: right;
+    width: 100%;
+    border: 0;
+}
+#nav-list{
+    margin: 0 -15px;
+
+}
+li{ 
+    border: 1px solid black;
+    padding: 0; 
+}
+#nav-list li a.text-center{
+    font-weight: bold;
+    color: black;
+    font-size: 1.6em;
+    background-color: #FFFFFF;
+}
+
+
+/* END HEADER */
+
+/* HOME PAGE */
+
+#main-content.container {
+    width: 100%;
+    margin: 10px 10px;
+}
+
+#main-content h2 {
+    font-weight: bold;
+    color: black;
+    font-size: 2.5em;
+}
+
+#main-content h3 {
+    font-weight: bold;
+    color: black;
+    padding-top: 5px;
+    font-size: 2em;
+}
+
+#food-content {
+    background-color: #babdce;
+    font-size: 1.2em;
+}
+/* END HOME PAGE */
+
+/********** Medium devices only **********/
+@media (min-width: 992px) {
+
+    #collapsable-nav {
+        visibility: hidden;
+        position: absolute;
+        right: 0;
+    }
+
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+    #collapsable-nav {
+        visibility: hidden;
+        position: absolute;
+        right: 0;
+    }
+}
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+    
+
+}
